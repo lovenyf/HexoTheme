@@ -12,6 +12,7 @@
 
 .article-meta
   clearfix()
+  margin-bottom: article-margin
 
 .article-date
   @extend $block-caption
@@ -31,7 +32,7 @@
   margin: 0 12px 1em
 
 .article-header
-  padding-bottom: article-padding
+  padding-bottom: article-padding-m
 
 .article-title
   text-decoration: none
@@ -48,14 +49,16 @@
   clearfix()
   color: color-default
   padding: 0 article-padding
+  @media mq-mymobile
+    padding: article-padding-m
   p, table
     line-height: line-height
-    margin: line-height 0
+    margin: line-height-title 0
   h1, h2, h3, h4, h5, h6
     font-weight: bold
   h1, h2, h3, h4, h5, h6
     line-height: line-height-title
-    margin: line-height-title 0
+    margin: line-height 0 line-height-small 0
   a
     color: color-link
     text-decoration: none
@@ -68,7 +71,7 @@
     max-width: 80%
     height: auto
     display: block
-    margin: line-height auto
+    margin: line-height auto 0
     box-shadow: 2px 2px 4px #bbb
     border: 1px solid color-border
     border-radius: 3px
@@ -87,7 +90,7 @@
     padding: 10px 0
   blockquote
     font-family: font-serif
-    font-size: 1.4em
+    font-size: 1.2em
     margin: line-height 20px
     text-align: center
     footer
@@ -98,6 +101,8 @@
         &:before
           content: "—"
           padding: 0 0.5em
+  pre,code
+    word-wrap: break-word;
   .pullquote
     text-align: left
     width: 45%
